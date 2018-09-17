@@ -11,7 +11,7 @@ http.createServer(function(request,response){
         optfile.readfile('./index.html',recall);//传入闭包函数
         console.log("主程序结束");
     }   
-}).listen(8000);
+}).listen(3000);
 var fs = require("fs");
 
 module.exports = {

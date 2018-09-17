@@ -1,8 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
-const hostname = '0.0.0.0';
-const port = 8080;
+ 
  
 // 创建服务器
 http.createServer( function (request, response) {  
@@ -30,6 +29,7 @@ http.createServer( function (request, response) {
       //  发送响应数据
       response.end();
    });   
-}).listen(port, hostname);
-
-console.log(`Server running at http://${hostname}:${port}/`);
+}).listen(8080);
+ 
+// 控制台会输出以下信息
+console.log('Server running at http://127.0.0.1:8080/');

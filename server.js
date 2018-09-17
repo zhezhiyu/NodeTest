@@ -40,8 +40,8 @@
 		如果host省略，如果IPv6可用，服务器将会接收基于unspecified IPv6 address (::)的连接，否则接收基于unspecified IPv4 address (0.0.0.0)的连接
 	
 	*/
-	server.listen(3011, function(){
-		 console.log('服务器正在端口号：3011上运行......');
+	server.listen(3000, function(){
+		 console.log('服务器正在端口号：3000上运行......');
 	})
 	
 	

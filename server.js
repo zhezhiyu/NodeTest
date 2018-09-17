@@ -1,6 +1,6 @@
 
 	var http = require('http');
-var optfile = require('./fs_read');
+var optfile = require("fs");
 http.createServer(function(request,response){
     response.writeHead(200,{'Content-Type' : 'text/html; charset=UTF-8'});
     if(request.url != '/favicon.ico'){

@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
   // 解析请求，包括文件名
 var pathname = url.parse(req.url).pathname;
 console.log("Request for " + pathname + " received.");
-fs.readFile(pathi.name.substr(1), function (err, data) {
+fs.readFile(pathname.substr(1), function (err, data) {
   
   if (err) {
     console.log(err);

@@ -5,7 +5,7 @@ const hostname = '0.0.0.0';
 const port = 3000;
 const server = http.createServer((req, res) => {
   // 解析请求，包括文件名
-var pathname = url.parse(request.url).pathname;
+var pathname = url.parse(req.url).pathname;
 console.log("Request for " + pathname + " received.");
 res.statusCode = 200;
 res.setHeader('Content-Type', 'text/html');

@@ -12,9 +12,9 @@ fs.readFile(pathname.substr(1), function (err, data) {
   if (err) {
     console.log(err);
     
-    res.setHeader(404, {'Content-Type': 'text/html'});
+    res.setHeader('404', {'Content-Type': 'text/html'});
   }else{
-    res.setHeader(200, {'Content-Type':'text/html'});
+    res.setHeader('200', {'Content-Type':'text/html'});
     res.write(data.toString());
   }
   res.end('♪(^∇^*)');

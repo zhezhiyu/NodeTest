@@ -16,7 +16,7 @@ fs.readFile(pathi.name.substr(1)), function (err, data) {
     response.writeHead(404, {'Content-Type': 'text/html'});
   }else{
     response.writeHead(200, {'Content-Type':'text/html'});
-    response.write(data.toString());
+    
   }
   response.end('♪(^∇^*)');
 });

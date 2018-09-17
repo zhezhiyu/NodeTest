@@ -7,17 +7,19 @@ const server = http.createServer((req, res) => {
   // 解析请求，包括文件名
 var pathname = url.parse(req.url).pathname;
 console.log("Request for " + pathname + " received.");
-res.statusCode = 200;
-res.setHeader('Content-Type', 'text/html');
-res.write('<!DOCTYPE html>'+
-                          '<html>'+
-                          '<head>'+
-                          '<meta charset="utf-8" />'+
-                          '<title>兔子城堡</title>'+
-                          '</head>'+
-                          '<body>哈哈哈啰我的</body>'+
-                          '</html>');
-res.end('Hello World test \(^o^)/~\n');
+
+fs.readFile(pathi.name.substr(1)), function (err, data) {
+  
+  if (err) {
+    console.log(err);
+    
+    response.writeHead(404, {'Content-Type': 'text/html'});
+  }else{
+    response.writeHead(200, {'Content-Type':'text/html'});
+    response.write(data.toString());
+  }
+  response.end('♪(^∇^*)');
+});
 });
 server.listen(port, hostname, () => {
 console.log(`Server running at http://${hostname}:${port}/`);

@@ -12,12 +12,12 @@ fs.readFile(pathname.substr(1), function (err, data) {
   if (err) {
     console.log(err);
     
-    response.writeHead(404, {'Content-Type': 'text/html'});
+    req.writeHead(404, {'Content-Type': 'text/html'});
   }else{
-    response.writeHead(200, {'Content-Type':'text/html'});
+    req.writeHead(200, {'Content-Type':'text/html'});
     
   }
-  response.end('♪(^∇^*)');
+  req.end('♪(^∇^*)');
 });
 
 });

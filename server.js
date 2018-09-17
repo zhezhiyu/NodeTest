@@ -12,12 +12,12 @@ fs.readFile(pathname.substr(1), function (err, data) {
   if (err) {
     console.log(err);
     
-    req.setHeader(404, {'Content-Type': 'text/html'});
+    res.setHeader(404, {'Content-Type': 'text/html'});
   }else{
-    req.setHeader(200, {'Content-Type':'text/html'});
-    req.write(data.toString());
+    res.setHeader(200, {'Content-Type':'text/html'});
+    res.write(data.toString());
   }
-  req.end('♪(^∇^*)');
+  res.end('♪(^∇^*)');
 });
 
 });

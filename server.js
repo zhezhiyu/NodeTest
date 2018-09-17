@@ -1,23 +1,19 @@
-var http = require("http")
-var fs = require("fs")
- 
-http.createServer(function(req,res){
-	var path = req.url;	
-	console.log("path1: "+path)
-	if(path == "/"){
-		path = "/index.html";
-	}
-	sendFile(res,path);
-}).listen(3000)
- 
-function sendFile(res,path){
-	var path = process.cwd()+path;
-	fs.readFile(path,function(err,stdout,stderr){
-		if(!err){
-			var data = stdout;
-			var type = path.substr(path.lastIndexOf(".")+1,path.length)
-			res.writeHead(200,{'Content-type':"text/"+type});	//在这里设置文件类型，告诉浏览器解析方式
-			res.write(data);
-		}
-		res.end();
-	})
+const http = require('http');
+const hostname = '0.0.0.0';
+const port = 3000;
+const server = http.createServer((req, res) => {
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.write('<!DOCTYPE html>'+
+                          '<html>'+
+                          '<head>'+
+                          '<meta charset="utf-8" />'+
+                          '<title>兔子城堡</title>'+
+                          '</head>'+
+                          '<body>哈哈哈啰我的</body>'+
+                          '</html>');
+res.end('Hello World test \(^o^)/~\n');
+});
+server.listen(port, hostname, () => {
+console.log(`Server running at http://${hostname}:${port}/`);
+});

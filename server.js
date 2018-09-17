@@ -1,9 +1,14 @@
 const http = require('http');
+const fs = require('fs');
+var url = require('url');
 const hostname = '0.0.0.0';
 const port = 3000;
 const server = http.createServer((req, res) => {
+  // 解析请求，包括文件名
+var pathname = url.parse(request.url).pathname;
+console.log("Request for " + pathname + " received.");
 res.statusCode = 200;
-res.setHeader('Content-Type', 'text/plain');
+res.setHeader('Content-Type', 'text/html');
 res.write('<!DOCTYPE html>'+
                           '<html>'+
                           '<head>'+
